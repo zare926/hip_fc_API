@@ -29,12 +29,11 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
       ## User Info
-      t.string :name
-      t.string :nickname
-      t.string :image
-      t.string :email
-      t.boolean :paid_member
-      t.boolean :notice
+      t.string :name, null: false
+      t.string :image, null: false, default: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fnureyon.com%2Fupper_body-2%3Fpattern%3D2&psig=AOvVaw2_WdR1-wdNoUFjcthZ9QT2&ust=1648020569150000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOiR5ZOZ2fYCFQAAAAAdAAAAABAi'
+      t.string :email, null: false
+      t.boolean :paid_member, null: false, default: false
+      t.boolean :notice, null: false, default: false
 
       ## Tokens
       t.text :tokens
